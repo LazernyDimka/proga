@@ -14,4 +14,4 @@ class HelloWorld
         Console.WriteLine(rez);
     }
 }
-/* задача про грядки
+/* Р—Р°РґР°С‡Р° СЃ РіСЂСЏРґРєР°РјРё
