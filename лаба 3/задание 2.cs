@@ -1,28 +1,38 @@
 using System;
-class HelloWorld
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace лаба_3
 {
-    static void Main()
+    internal class Program
     {
-        int c = 1, n, max = 0, num, y = 0;
-        n = Convert.ToInt32(Console.ReadLine());
-        for (int i = 0; i < n; i++)
+        static void Main()
         {
-            num = Convert.ToInt32(Console.ReadLine());
-            if (num == 0 && num == y)
+            int n, t, c = 0, res = 0, minres = 10000000;
+            n = int.Parse(Console.ReadLine());
+            for (int i = 0; i < n; i++) 
             {
-                c++;
-                if (c > max)
+                t = int.Parse(Console.ReadLine());
+                if (t == 0 && t == c)
                 {
-                    max = c;
+                    res++;
+                    if (res < minres)
+                    {
+                        minres = res;
+                    }
                 }
-                else
+                else 
                 {
-                    c = 0;
+                    res = 0;
                 }
+                c = t;
             }
-            y = num;
+            Console.WriteLine("Минимальная последовательность из нулей: " + (minres + 1));
+            Console.ReadKey();
         }
-        Console.WriteLine(max);
     }
 }
-//����� ���������� ������������������ �� �����//
+//Найти минимальную подпоследовательность из нулей.
