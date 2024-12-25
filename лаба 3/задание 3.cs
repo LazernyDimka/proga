@@ -1,29 +1,38 @@
 using System;
-class HelloWorld
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace лаба_3
 {
-    static void Main()
+    internal class Program
     {
-        int c = 0, n, max = 0, num;
-        n = Convert.ToInt32(Console.ReadLine());
-        for (int i = 0; i < n; i++)
+        static void Main()
         {
-            num = Convert.ToInt32(Console.ReadLine());
-            if (num % 2 == 0)
+            int n, t, c = 0, res = 0, maxres = -10000000;
+            n = int.Parse(Console.ReadLine());
+            for (int i = 0; i < n; i++) 
             {
-                c += num;
-                if (c > max)
+                t = int.Parse(Console.ReadLine());
+                if (t % 2 == 0)
                 {
-                    max = c;
-
+                    res += t;
+                    if (res > maxres) 
+                    {
+                        maxres = res;
+                    }
                 }
+                else 
+                {
+                    res = 0;
+                }
+                c = t;
             }
-            else
-            {
-                c = 0;
-            }
+            Console.WriteLine("максимальная сумма четных чисел из подпоследовательности: " + (maxres));
+            Console.ReadKey();
         }
-        Console.WriteLine(max);
     }
-
 }
-//���� ��������� �� ������ ����//
+//Найти макс сумму четных чисел из одной подпоследовательности.
