@@ -1,28 +1,39 @@
 using System;
-class HelloWorld
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Р»Р°Р±Р°_3
 {
-    static void Main()
+    internal class Program
     {
-        int n, c = 0, t, y = 1, max = 0;
-        n = Convert.ToInt32(Console.ReadLine());
-        for (int i = 0; i < n; i++)
+        static void Main()
         {
-            t = Convert.ToInt32(Console.ReadLine());
-            if (i != 0 & c == t)
+            int n, t, c = 0, res = 0, maxres = -10000000;
+            n = int.Parse(Console.ReadLine());
+            for (int i = 0; i < n; i++) 
             {
-                y++;
+                t = int.Parse(Console.ReadLine());
+                if (i != 0 && c == t)
+                {
+                    res++;
+                }
+                if (maxres < res)
+                {
+                    maxres = res;
+                }
+                else 
+                {
+                    res = 1;
+                }
+                c = t;
+
             }
-            if (y > max)
-            {
-                max = y;
-            }
-            else
-            {
-                y = 1;
-            }
-            c = t;
+            Console.WriteLine("РћС‚РІРµС‚: " + (maxres + 1));
+            Console.ReadKey();
         }
-        Console.WriteLine(max);
     }
 }
-//максимальное число одинаковых эелементов подряд//
+//РќР°Р№С‚Рё РґР»РёРЅСѓ РјР°РєСЃРёРјР°Р»СЊРЅРѕР№ РїРѕРґРїРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕСЃС‚Рё РѕРґРёРЅР°РєРѕРІС‹С… СЌР»РµРјРµРЅС‚РѕРІ.
