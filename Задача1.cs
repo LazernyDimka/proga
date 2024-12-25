@@ -4,11 +4,14 @@ class HelloWorld
 {
     static void Main()
     {
-        int a, b;
+        int a, b, c;
         a = Convert.ToInt32(Console.ReadLine());
         b = Convert.ToInt32(Console.ReadLine());
-        Console.WriteLine(a - a + b);
-        Console.WriteLine(b - b + a);
+        c = a;
+        a = a - a + b;
+        b = c;
+        Console.WriteLine(a);
+        Console.WriteLine(b);
     }
 }
 /* Меняем значение двух переменных местами
